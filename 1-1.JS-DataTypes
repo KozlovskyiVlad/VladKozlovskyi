@@ -1,0 +1,217 @@
+function Product(ID, name, description, price, brand, sizes,
+   activeSize, quantity, YYYY, MM, dd, hh, mm, ss, images) {
+   this.ID = ID,
+      this.getID = function () {
+         return `${this.ID}`;
+      },
+      this.setID = function (value) {
+         this.ID = value;
+      },
+
+      this.name = name,
+      this.getName = function () {
+         return `${this.name}`;
+      },
+      this.setName = function (value) {
+         this.name = value;
+      },
+
+      this.description = description,
+      this.getdDescription = function () {
+         return `${this.description}`;
+      },
+      this.setDescription = function (value) {
+         this.description = value;
+      },
+
+      this.price = price,
+      this.getPrice = function () {
+         return `${this.price}`;
+      },
+      this.setPrice = function (value) {
+         this.price = value;
+      },
+
+      this.brand = brand,
+      this.getBrand = function () {
+         return `${this.brand}`;
+      },
+      this.setBrand = function (value) {
+         this.brand = value;
+      },
+
+      this.sizes = sizes,
+      this.getSizes = function () {
+         return `${this.sizes}`;
+      },
+      this.setSizes = function (value) {
+         this.sizes = value;
+      },
+
+      this.activeSize = activeSize,
+      this.getActiveSize = function () {
+         return `${this.activeSize}`;
+      },
+      this.setActiveSize = function (value) {
+         this.activeSize = value;
+      },
+
+      this.quantity = quantity,
+      this.getQuantity = function () {
+         return `${this.quantity}`;
+      },
+      this.setQuantity = function (value) {
+         this.quantity = value;
+      },
+
+      this.date = new Date(YYYY, MM, dd, hh, mm, ss),
+      this.getDate = function () {
+         return this.date;
+      },
+      this.setDate = function (YYYY, MM, dd, hh, mm, ss) {
+         this.date = new Date(YYYY, MM, dd, hh, mm, ss);
+      },
+
+      this.reviews = [],
+      this.getReviews = function () {
+         return this.reviews;
+      },
+
+      this.addReview = function (reviewID, author, YYYY, MM, dd, hh, mm, ss, comment, service, priceRating, value, quality) {
+         this.reviews.push(new Review(reviewID, author, new Date(YYYY, MM, dd, hh, mm, ss), comment, {
+            service: service,
+            price: priceRating,
+            value: value,
+            quality: quality,
+         }))
+      }
+
+   this.deleteReview = function (ID) {
+      for (let i = 0; i < this.reviews.length; i++) {
+         if (this.reviews[i].getReviewID() == ID) {
+            this.reviews.splice(i, 1);
+         }
+      }
+   }
+
+   this.getReviewByID = function (ID) {
+      for (let i = 0; i < this.reviews.length; i++) {
+         if (this.reviews[i].getReviewID() == ID) {
+            return this.reviews[i];
+         }
+      }
+   }
+
+   this.getImage = function (index) {
+      if (index != null) {
+         for (let i = 0; i < this.images.length; i++) {
+            if (index == i) {
+               return this.images[i];
+            }
+         }
+      } else return this.images;
+   }
+   /*this.setReviews = function (reviewID, author, YYYY, MM, dd, hh, mm, ss, comment, service, priceRating, value, quality) {
+      this.reviews = new Review(reviewID, author, new Date(YYYY, MM, dd, hh, mm, ss), comment, {
+         service: service,
+         price: priceRating,
+         value: value,
+         quality: quality,
+      });
+   },*/
+
+   this.images = images,
+      this.getImages = function () {
+         return `${this.images}`;
+      },
+      this.setImages = function (value) {
+         this.images = value;
+      };
+
+   this.addSize = function(value) {
+      this.sizes.push(value);
+   }
+
+   this.deleteSize = function (value) {
+      for (let i = 0; i < this.sizes.length; i++) {
+         if (this.sizes[i] == value) {
+            this.sizes.splice(i, 1);
+         }
+      }
+   }
+
+   this.getAverageRating = function(){
+      let sum = 0;
+      for (let i = 0; i < this.reviews.length; i++) {
+         console.log(this.reviews[i].getAverageR());
+         let buff =  this.reviews[i].getAverageR();
+         sum = sum + buff;
+         console.log(buff);
+         console.log(sum);
+      }
+      let result = sum / this.reviews.length+1;
+      return result;
+   }
+
+}
+
+
+
+
+
+
+
+function Date(YYYY, MM, dd, hh, mm, ss) {
+   this.YYYY = YYYY,
+      this.MM = MM,
+      this.dd = dd,
+      this.hh = hh,
+      this.mm = mm,
+      this.ss = ss;
+}
+
+function Review(ID, author, date, comment, service, priceRating, value, quality) {
+   this.ID = ID,
+      this.getReviewID = function () {
+         return `${this.ID}`;
+      },
+      this.author = author,
+      this.date = date,
+      this.comment = comment,
+      this.rating = {
+         service: service,
+         price: priceRating,
+         value: value,
+         quality: quality,
+      }
+      this.getAverageR = function () {
+         let result = (this.rating.service.service + this.rating.service.price + this.rating.service.value + this.rating.service.quality) / 4;
+         return result;
+      };
+}
+
+let p1 = new Product(2,
+   'pants',
+   'red pants',
+   100,
+   'nike',
+   ['XS', 'S', 'M'],
+   'S',
+   20,
+   2002, 05, 12, 09, 15, 20,
+   new Review(1975, "vlad", new Date(1234, 11, 21, 12, 33, 44), "good shirt", 3, 2, 4, 5),
+   ['img1', 'img2','img3','img4']);
+
+
+
+
+
+let person = {
+   first: 'vlad',
+   second: `vitaliy`,
+
+   show() {
+      console.log(`${person.first}`);
+   }
+}
+person.show();
