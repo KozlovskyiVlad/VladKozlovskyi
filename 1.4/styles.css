@@ -1,0 +1,194 @@
+/*.blocks {
+    display: flex;
+}
+
+.block1 {
+    display: block;
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(21, 204, 21);
+}
+
+#block2 {
+    display: block;
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(156, 7, 7);
+}
+
+.block3 {
+    display: block;
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(220, 255, 64);
+}
+
+.block3_change {
+    display: block;
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(58, 70, 5);
+}
+
+#block4 {
+    display: block;
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(0, 223, 30);
+    opacity: 0;
+}
+
+.btns {
+    display: flex;
+}
+
+#b1 {
+    margin: 50px;
+}
+
+#b2 {
+    margin: 50px;
+    margin-left: 90px;
+}
+
+#b3 {
+    margin: 50px;
+    margin-left: 100px;
+}
+
+#b4 {
+    margin: 50px;
+    margin-left: 110px;
+}
+
+#imgID {
+    width: 100px;
+    height: 100px;
+    background: url("fb_logo.png");
+}
+
+#canvas {
+    border: 1px solid rgb(31, 10, 10);
+}
+
+.location {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.arrowUp {
+    position: fixed;
+    bottom: 12%;
+    right: 5%;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+}
+
+/*html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 350vh;
+    background: url(ey.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#big {
+    width: 500px;
+    height: 500px;
+    background-color: dodgerblue;
+}
+
+#small {
+    position: absolute;
+    top: 125px;
+    left: 125px;
+    width: 250px;
+    height: 250px;
+    background-color: #e9ff1e;
+}
+
+#button_16 {
+    left: 30px;
+    top: 30px;
+    position: fixed;
+    color: coral;
+    background: rgb(28, 163, 111);
+}
+
+#div_wall {
+    display: none;
+    width: 100%;
+    min-height: 1000px;
+    background: #6b971a80
+}
+
+#div_wall2 {
+    width: 100%;
+    min-height: 2000px;
+    background: #17a04480
+}
+
+.disable_scroll {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+*/
+.drop-zone {
+    max-width: 200px;
+    height: 200px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cccccc;
+    border: 4px dashed #009578;
+    border-radius: 10px;
+  }
+  
+  .drop-zone--over {
+    border-style: solid;
+  }
+  
+  .drop-zone__input {
+    display: none;
+  }
+  
+  .drop-zone__thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center;
+  }
