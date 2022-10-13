@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "../../Стільниця"
+        },
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "TS"
+    }
+}
